@@ -15,7 +15,7 @@ app.use(express.json());
 //    optionSuccessStatus:200,
 // }
 
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
 
 // const auth = 
 const posts = require("./routes/postRoutes");
