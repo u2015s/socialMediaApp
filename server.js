@@ -32,6 +32,9 @@ const connectToDB = require("./db/conn");
 connectToDB(process.env.ATLAS_URI);
 
 
+app.use(express.static(path.join(__dirname, './client/build')));
+
+
 app.use('/auth',require("./routes/authRoutes"))
 app.use(verifyAuthentication);
 app.use("/api/posts", posts);
@@ -39,6 +42,11 @@ app.use("/api/profile", profiles);
 app.use("/api/comments", comments);
 app.use("/api/followers", followers);
 app.use("/api/followings", followings);
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, './client/build', 'index.html'));
+});
+
 
 app.listen(port, () => {
   // perform a database connection when server starts
