@@ -1,17 +1,34 @@
 const express = require("express");
 const router = express.Router();
 const Following = require("../models/followingModel");
+const User = require("../models/userModel");
 
 router.get("/:id", async (req, res) => {
   try {
     const userId = req.params.id;
-    const followings = await Following.find({ userId });
-    res.status(200).json({
-      message: "Followings fetched successfully.",
-      response: {
-        followings,
-      },
-    });
+    const followingsData = await Following.find({ userId });
+    const followings = []
+    followingsData[0].followingId.forEach(async (item)=>{
+      var user = await User.findById( item );
+      // console.log(user)
+      followings.push(user)
+    if(followings.length == followingsData[0].followingId.length){
+        res.status(200).json({
+          message: "Followings fetched successfully.",
+          response: {
+            followings,
+          },
+        });
+      }
+    })
+    // console.log(data)
+    // res.status(200).json({
+    //   message: "Followings fetched successfully.",
+    //   response: {
+    //     followings,
+    //   },
+    // });
+
   } catch (error) {
     console.error(error);
     res.status(500).json({
@@ -20,6 +37,8 @@ router.get("/:id", async (req, res) => {
     });
   }
 });
+
+
 
 router.post("/", async (req, res) => {
   try {

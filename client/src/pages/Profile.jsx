@@ -64,8 +64,14 @@ export default function Profile() {
   function hideFollow() {
     if (profile.userId) {
       if (followings.length !== 0) {
+        // for(let i = 0; i < followings.length; i++) {
+        //   let item = followings[i]._id
+        //     if(item ===profile.userId._id){
+        //       return false;
+        //     }
+        // }
         return (
-          followings[0].followingId.includes(_id) || _id === profile.userId._id
+           _id === profile.userId._id
         );
       }
     }
@@ -190,7 +196,7 @@ export default function Profile() {
                 <strong style={{ color: "black" }}>
                   {followingStatus === "success" &&
                     followings.length !== 0 &&
-                    followings[0].followingId.length + " "}
+                    followings.length + " "}
                 </strong> 
                  Following
               </Typography>

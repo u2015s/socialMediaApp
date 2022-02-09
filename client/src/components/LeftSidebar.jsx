@@ -64,9 +64,9 @@ export default function LeftSidebar() {
     <>
       <Box sx={{ height: "100vh", maxWidth: "100%" }}>
         <Box textAlign="center"
-        sx={{
-          marginTop:'3%'
-        }}
+          sx={{
+            marginTop: '3%'
+          }}
         >
           <NavLink
             to="/home"
@@ -80,7 +80,7 @@ export default function LeftSidebar() {
           </NavLink>
         </Box>
         <List>
-          
+
           <NavLink
             to="/home"
             style={{
@@ -152,27 +152,37 @@ export default function LeftSidebar() {
               />
             </Hidden>
           </ListItem> */}
-
-          <ListItem
-            button
-            sx={{
-              borderRadius: "28px",
-              margin: ".5rem 0",
+          <NavLink
+            to="/messages"
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              backgroundColor: "inherit",
             }}
           >
-            <ListItemIcon>
-              <MailOutlineIcon fontSize="medium" color="action" />
-            </ListItemIcon>
-            <Hidden lgDown>
-              <ListItemText
-                primaryTypographyProps={{
-                  fontSize: "18px",
-                  color: theme.palette.action.active,
-                }}
-                primary="Messages"
-              />
-            </Hidden>
-          </ListItem>
+            <ListItem
+              button
+              sx={{
+                borderRadius: "28px",
+                margin: ".5rem 0",
+              }}
+            >
+              <ListItemIcon>
+                <MailOutlineIcon fontSize="medium" color="action" />
+              </ListItemIcon>
+              <Hidden lgDown>
+                <ListItemText
+                  primaryTypographyProps={{
+                    fontSize: "18px",
+                    color: theme.palette.action.active,
+                  }}
+                  primary="Messages"
+                />
+              </Hidden>
+            </ListItem>
+
+          </NavLink>
+
 
           {/* <ListItem
             button
@@ -195,7 +205,7 @@ export default function LeftSidebar() {
             </Hidden>
           </ListItem> */}
 
-{/* 
+          {/* 
           <ListItem
             button
             sx={{
