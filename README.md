@@ -14,7 +14,9 @@ Link- https://smappp.herokuapp.com/
 * React
 * Express.js
 * Node.js
-* M0ngoDB
+* MongoDB
+* Redux
+* Socket.io
 
 
 <!-- ## Screenshots
