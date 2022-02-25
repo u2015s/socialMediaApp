@@ -176,7 +176,8 @@ export default function Profile() {
                 <InsertLinkIcon htmlColor="#555" />
                 <Link
                   sx={{ textDecoration: "none", marginLeft: "6px" }}
-                  href={profile.website || "https:/wasifbaliyan.com"}
+                  href={profile.website || "https://github.com/u2015s"}
+                  target = "_blank"
                 >
                   {profile.website ? profile.website : "www"}
                 </Link>

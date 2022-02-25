@@ -22,7 +22,7 @@ import { getPosts, updateLike } from "../redux/postSlice";
 import Modal from "./Modal";
 import { getProfile } from "../redux/authSlice";
 
-export default function MessageCard({ item }) {
+export default function MessageCard({ item, con }) {
   const dispatch = useDispatch();
   const [commentText, setCommentText] = useState("");
 
@@ -41,7 +41,11 @@ export default function MessageCard({ item }) {
   return (
     <>
       <Link
-        to={`/messages/${item._id}`}
+        to={{
+          pathname:`/messages/${item._id}`,
+          state:{con:con}
+        
+        }}
         style={{ textDecoration: "none", color: "inherit" }}
       >
         <Box
@@ -111,14 +115,13 @@ export default function MessageCard({ item }) {
                     
                   </Grid>
 
-                    <Grid item>
+                    {/* <Grid item>
                       <Box>
                         <Typography sx={{ fontSize: "15px", color: "#555" }}>
-                          {/* {item.text} */}
                           How are you
                         </Typography>
                       </Box>
-                    </Grid>
+                    </Grid> */}
 
                 </Grid>
 
