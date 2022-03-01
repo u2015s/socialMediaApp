@@ -1,7 +1,8 @@
 # socialMediaApp
 
 ## Description
-A platform where a user can connect with others, share his/her thoughts and chat with others.
+A platform where a user can connect with others, share his/her thoughts and chat with others.<br/>
+You can login as guest.<br/>
 Link- https://smappp.herokuapp.com/
 
 ## Features
