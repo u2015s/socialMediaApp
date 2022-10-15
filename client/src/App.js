@@ -2,11 +2,14 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 import Layout from "./components/Layout";
+import Layout2 from "./components/Layout2";
 import Profile from "./pages/Profile";
 import PrivateRoute from "./components/PrivateRoute";
 import { Route, Switch } from "react-router";
 import Home from "./pages/Home";
+import Message from "./pages/Message";
 import PostDetails from "./pages/PostDetails";
+import MessageDetails from "./pages/MessageDetails";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
@@ -45,6 +48,16 @@ function App() {
       <PrivateRoute exact path="/home">
         <Layout>
           <Home />
+        </Layout>
+      </PrivateRoute>
+      <PrivateRoute exact path="/messages">
+        <Layout>
+          <Message />
+        </Layout>
+      </PrivateRoute>
+      <PrivateRoute exact path="/messages/:id">
+        <Layout>
+          <MessageDetails />
         </Layout>
       </PrivateRoute>
       <Route exact path="/">

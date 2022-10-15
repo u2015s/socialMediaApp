@@ -7,7 +7,7 @@ import { useTheme } from "@mui/system";
 import { getUsers } from "../redux/authSlice";
 import { useDispatch } from "react-redux";
 
-export default function Layout({ children}) {
+export default function Layout2({ children}) {
   const theme = useTheme();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -38,11 +38,11 @@ export default function Layout({ children}) {
                 {children}
               </Box>
             </Grid>
-            <Hidden lgDown>
+            {/* <Hidden lgDown>
               <Grid item lg={4} sx={{ height: "100vh" }}>
                 <RightSidebar />
               </Grid>
-            </Hidden>
+            </Hidden> */}
           </Grid>
         </Grid>
       </Grid>

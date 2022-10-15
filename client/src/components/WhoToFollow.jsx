@@ -21,8 +21,8 @@ export default function WhoToFollow({ user }) {
       if(followingStatus==="success"){
         // console.log(followings[0])
     
-        for(let i = 0; i < followings[0].followingId.length; i++){
-          let item = followings[0].followingId[i];
+        for(let i = 0; i < followings.length; i++){
+          let item = followings[i]._id;
           if(item === user._id){
             // console.log("true 35")
             setIsFollowing(true);

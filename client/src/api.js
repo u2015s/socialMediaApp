@@ -71,3 +71,12 @@ export const DeleteFollowingAccount = async (followData) => {
   //   alert("Something went wrong.");
   // }
 };
+
+export const getUserProfile = async (id) => {
+  try {
+    const { data } = await axios.get("/api/profile/" + id);
+    return data;
+  } catch (error) {
+    alert("Something went wrong.");
+  }
+};
